@@ -25,7 +25,7 @@ $sharedMem = shmop_open( $_SESSION['client-id'], "c", 0644, 100 );
     </head>
     <body>
         <div id="stage"></div>
-	<?php $remoteUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/demo/remote-control.html?client-id=' . $_SESSION['client-id']; ?>
+	<?php $remoteUrl = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] . 'remote-control.html?client-id=' . $_SESSION['client-id']; ?>
 	<img src="QRcode.php?message=<?=urlencode($remoteUrl)?>">
 	<p><?=$remoteUrl?></p>
 
